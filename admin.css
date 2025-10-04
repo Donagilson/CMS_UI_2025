@@ -1,0 +1,452 @@
+:root {
+    --olive-green: #6b8e23;
+    --olive-dark: #556b2f;
+    --olive-light: #8fbc8f;
+    --sage-green: #9dc183;
+    --text-dark: #2c3e50;
+    --text-light: #7f8c8d;
+    --border-color: #dce1e5;
+    --bg-light: #f8f9fa;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Bar */
+.navbar {
+    background: linear-gradient(135deg, var(--olive-green), var(--olive-dark));
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border: none;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+/* Sidebar */
+.sidebar {
+    background: var(--white);
+    min-height: calc(100vh - 56px);
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    border-right: 1px solid var(--border-color);
+}
+
+.sidebar .nav-link {
+    color: var(--text-dark);
+    padding: 12px 20px;
+    margin: 2px 0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.sidebar .nav-link:hover {
+    background: var(--olive-light);
+    color: var(--white);
+    transform: translateX(5px);
+}
+
+.sidebar .nav-link.active {
+    background: linear-gradient(135deg, var(--olive-green), var(--olive-dark));
+    color: var(--white);
+    box-shadow: 0 2px 8px rgba(107, 142, 35, 0.3);
+}
+
+.sidebar .nav-link i {
+    width: 20px;
+    text-align: center;
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--olive-green);
+    background: var(--white);
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.dashboard-card:hover .card-icon {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1;
+}
+
+.stat-label {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Content Sections */
+.content-section {
+    display: none;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.content-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Tables */
+.table {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.table th {
+    background: var(--olive-green);
+    color: var(--white);
+    font-weight: 600;
+    border: none;
+    padding: 15px 12px;
+}
+
+.table td {
+    padding: 12px;
+    border-color: var(--border-color);
+    vertical-align: middle;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(107, 142, 35, 0.05);
+}
+
+/* Buttons */
+.btn-success {
+    background: linear-gradient(135deg, var(--olive-green), var(--olive-dark));
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, var(--olive-light), var(--olive-green));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(107, 142, 35, 0.3);
+}
+
+.btn-outline-light:hover {
+    background: var(--white);
+    color: var(--olive-green);
+}
+
+/* Badges */
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.badge-success {
+    background: var(--olive-green);
+}
+
+.badge-warning {
+    background: #f39c12;
+}
+
+.badge-secondary {
+    background: var(--text-light);
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    background: var(--white);
+}
+
+.card-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px;
+}
+
+.card-title {
+    color: var(--text-dark);
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Forms */
+.form-control {
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--olive-green);
+    box-shadow: 0 0 0 0.2rem rgba(107, 142, 35, 0.15);
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+/* List Groups */
+.list-group-item {
+    border: 1px solid var(--border-color);
+    padding: 15px 20px;
+    transition: all 0.3s ease;
+}
+
+.list-group-item:hover {
+    background: var(--bg-light);
+    border-color: var(--olive-light);
+}
+
+.list-group-item-action {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.list-group-item-action:hover {
+    color: var(--olive-green);
+}
+
+/* Modal */
+.modal-content {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, var(--olive-green), var(--olive-dark));
+    color: var(--white);
+    border-radius: 12px 12px 0 0;
+    border: none;
+}
+
+.modal-title {
+    font-weight: 600;
+}
+
+.btn-close {
+    filter: invert(1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        min-height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .card-icon {
+        font-size: 2rem;
+    }
+    
+    .table-responsive {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1rem;
+    }
+    
+    .content-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--olive-light);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--olive-green);
+}
+
+/* Olive Green Theme Colors */
+:root {
+    --olive-green: #808000;
+    --olive-green-light: #9a9a00;
+    --olive-green-dark: #666600;
+    --olive-green-lighter: #b8b894;
+}
+
+/* Olive Green Background */
+.bg-olive {
+    background-color: var(--olive-green) !important;
+}
+
+/* Olive Green Text */
+.text-olive {
+    color: var(--olive-green) !important;
+}
+
+/* Olive Green Buttons */
+.btn-olive {
+    background-color: var(--olive-green);
+    border-color: var(--olive-green);
+    color: white;
+}
+
+.btn-olive:hover {
+    background-color: var(--olive-green-dark);
+    border-color: var(--olive-green-dark);
+    color: white;
+}
+
+.btn-outline-olive {
+    color: var(--olive-green);
+    border-color: var(--olive-green);
+}
+
+.btn-outline-olive:hover {
+    background-color: var(--olive-green);
+    border-color: var(--olive-green);
+    color: white;
+}
+
+/* Olive Green Badges */
+.badge.bg-olive {
+    background-color: var(--olive-green) !important;
+}
+
+/* Summary Cards with Olive Green Theme */
+.summary-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #e3e6f0;
+}
+
+.summary-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(128, 128, 0, 0.2);
+}
+
+.summary-number {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.summary-label {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+/* Chart container */
+#reportChart {
+    max-height: 400px;
+}
+
+/* Table improvements for reports */
+#reportDataTable th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    border-bottom: 2px solid var(--olive-green-lighter);
+}
+
+/* Custom date range styling */
+#customDateRange .input-group {
+    gap: 5px;
+}
+
+#customDateRange .form-control {
+    flex: 1;
+}
+
+/* List group items with olive green hover */
+.list-group-item:hover {
+    background-color: rgba(128, 128, 0, 0.1);
+    border-left: 3px solid var(--olive-green);
+}
+
+/* Card headers with olive green */
+.card-header.bg-olive {
+    border-bottom: 2px solid var(--olive-green-dark);
+}
+
+/* Export buttons hover effects */
+.btn-outline-olive:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(128, 128, 0, 0.3);
+}
+
+/* Olive green progress bars */
+.progress-bar.bg-olive {
+    background-color: var(--olive-green) !important;
+}
+
+/* Olive green alerts */
+.alert-olive {
+    background-color: rgba(128, 128, 0, 0.1);
+    border-color: var(--olive-green-lighter);
+    color: var(--olive-green-dark);
+}
